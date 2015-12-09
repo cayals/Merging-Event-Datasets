@@ -45,17 +45,18 @@ datetimeStart | datetimeEnd | itemID | attribute
 2015-10-11 19:40:18 | 2015-10-11 19:50:01 | TaxiA | Low | Available
 
 
-With this merged dataset, we can begin to analyze whether the taxis drive more slowly when they are available, do taxis drive more in the high or medium or low speeds when they have passengers, etc.
+With this merged dataset, we can begin to analyze whether the taxis drive more slowly when they are available, and whether taxis drive more in the high or medium or low speeds when they have passengers? 
 
 
 Map reduce is a very natural way to implement the merge logic, as it can be distributed by the itemID (for example, taxis).
-Furthermore, we can utilize the efficient distributed sort in map reduce. Here I have implemented a tertiary sort. 
+Furthermore, we can utilize the efficient distributed sort in map reduce. Here, I have implemented a tertiary sort. 
 
 The basic logic is as follows:
-1. Group by itemID
-2. For each record, generate two records, one for start datetime, one for end datetime. 
-3. Sort by datetime within the itemID partitions.
-4. For each sorted group of itemID, keep a variable called currentState and currentAttribute.
-5. Iterate over the sorted list of events, changing the variables and writing the records to disk one at a time.
+
+1.  Group by itemID
+2.  For each record, generate two records, one for start datetime, one for end datetime. 
+3.  Sort by datetime within the itemID partitions.
+4.  For each sorted group of itemID, keep a variable called currentState and currentAttribute.
+5.  Iterate over the sorted list of events, changing the variables and writing the records to disk one at a time.
 
 All the best! :smiley:
