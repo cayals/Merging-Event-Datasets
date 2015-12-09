@@ -50,12 +50,12 @@ With this merged dataset, we can begin to analyze whether the taxis drive more s
 
 Map reduce is a very natural way to implement the merge logic, as it can be distributed by the itemID (for example, taxis).
 Furthermore, we can utilize the efficient distributed sort in map reduce. Here I have implemented a tertiary sort. 
-The basic logic is as follows:
 
+The basic logic is as follows:
 1. Group by itemID
 2. For each record, generate two records, one for start datetime, one for end datetime. 
 3. Sort by datetime within the itemID partitions.
 4. For each sorted group of itemID, keep a variable called currentState and currentAttribute.
 5. Iterate over the sorted list of events, changing the variables and writing the records to disk one at a time.
 
-All the best!
+All the best! :smiley:
