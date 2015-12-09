@@ -1,9 +1,9 @@
 # Merging-Event-Datasets
 This repository contains a map reduce implementation of a merge between two event datasets.
 
-Let's imagine that we have a dataset containing all the taxis in town, with each record showing whether it is hired, available or off-shift. So, it looks like this
+<p>Let's imagine that we have a dataset containing all the taxis in town, with each record showing whether it is hired, available or off-shift. So, it looks like this<p />
 
-ItemID,datetimeStart,datetimeEnd,state
+<br>ItemID,datetimeStart,datetimeEnd,state<br />
 TaxiA,2015-10-11 19:02:19,2015-10-11 19:15:12,Hired
 TaxiA,2015-10-11 19:15:12,2015-10-11 19:18:19,Available
 TaxiA,2015-10-11 19:18:19,2015-10-11 19:40:18,Hired
