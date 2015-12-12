@@ -1,5 +1,5 @@
 # Merging-Event-Datasets
-This repository contains a map reduce implementation of a merge between two event datasets.
+This repository contains a map reduce implementation of a merge between two event datasets with records being linked by item ID and time. We utilize Hadoop Map Reduce's efficiency in distributed sort to group records based on item ID, perform tertiary sort to sort within the groups and iterate through the events to derive insights. 
 
 Let's imagine that we have a dataset containing all the taxis in town, with each record showing whether it is hired, available or off-shift. So, it looks like this
 
